@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Statement Parser</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Credit Card Statement Parser 📄</h1>
+            <p>Upload your PDF statement to automatically extract key information.</p>
+        </header>
+
+        <section class="uploader">
+            <label for="pdf-upload" class="upload-label">
+                <div id="upload-icon">⬆️</div>
+                <span id="upload-text">Click to browse or drag & drop a PDF</span>
+            </label>
+            <input type="file" id="pdf-upload" accept=".pdf" hidden>
+        </section>
+
+        <div class="spinner-container" id="spinner" style="display: none;">
+            <div class="spinner"></div>
+            <p>Parsing your document...</p>
+        </div>
+
+        <section class="results-container" id="results">
+            <!-- Parsed data will be dynamically inserted here -->
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
